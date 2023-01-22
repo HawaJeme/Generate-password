@@ -3,8 +3,8 @@ body{
     display: flex;
 }
 
-div{
-    position: absolute;
+.container{
+    position:absolute;
     left: 5%;
     align-items: center;
     padding-left: 25px;
@@ -43,8 +43,22 @@ p{
     border: none;
     border-radius: 6px;
     position: absolute;
-    width: 191px;
+    width: 195px;
     height: 42px;
     margin-top: 45px;
     font-size: 16.7px;
+}
+
+.RecOne {
+    display:flex;
+    flex-direction:row;
+    margin-top: 190px;
+    align-items: center;
+    justify-content: center;
+    color: #55F991;
+    width: 300px;
+    height: 42px;
+    background-color: #273549;
+    border: 1px solid none;
+    border-radius: 6px;
 }
