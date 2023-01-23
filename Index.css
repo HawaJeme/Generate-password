@@ -10,6 +10,10 @@ body{
     padding-left: 25px;
     padding-top: 50px;
 }
+.intro{
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgb(209, 209, 209) ;
+}
 
 .line-one{
     color:rgb(255, 255, 255);
@@ -45,20 +49,41 @@ p{
     position: absolute;
     width: 195px;
     height: 42px;
-    margin-top: 45px;
+    margin-top: 40px;
     font-size: 16.7px;
 }
 
-.RecOne {
+.field {
     display:flex;
     flex-direction:row;
-    margin-top: 190px;
+    margin-top: 160px;
     align-items: center;
     justify-content: center;
-    color: #55F991;
-    width: 300px;
+    color: rgb(85, 249, 145);
+    width: 400px;
     height: 42px;
     background-color: #273549;
     border: 1px solid none;
     border-radius: 6px;
 }
+
+button{
+    display: inline;
+    margin-left: 25px;
+    margin-top: 35px;
+    color: rgb(0, 0, 0);
+    background-color: #273549;
+    border-color: transparent;
+    border-radius: 20px;
+}
+
+.btn {
+    color: rgb(85, 249, 145);
+    font-size: 12px;
+    box-shadow: 0.1px 1px 7px rgb(85, 249, 145, 0.5);
+    text-shadow: 1px 0.4px black;
+  }
+
+button:active {
+    transform: translateY(2px);
+  }

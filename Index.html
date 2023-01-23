@@ -12,12 +12,18 @@
 </head>
 <body>
     <div class="container">
-    <h1 class="line-one">Generate a</h1>
-    <h1 class="line-two">random password</h1>
-    <p>Never use an insecure password again.</p>
-    <button class="generator">Generate a password</button>
-    <hr>
-    <div class="RecOne"><h4># PASSWORD</h4></div>
+        <div class="intro">
+            <h1 class="line-one">Generate a</h1>
+            <h1 class="line-two">random password</h1>
+            <p>Never use an insecure password again.</p>
+        </div>
+        <div class="password">
+            <button class="btn" onclick="onclick8()">8 Characters long Password</button>
+            <button class="btn" onclick="onclick15()">15 Characters long Password</button>
+            <button class="generator" onclick="password()">Generate a password</button>
+            <div class="field"><h4 id="pass"># PASSWORD</h4></div>
+        </div>
+    </div>
     </div>
     <script src="./Index.js"></script>
 </body>
