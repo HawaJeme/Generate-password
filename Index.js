@@ -5,7 +5,7 @@ const characters =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","
 
 const field = document.querySelector(".field");
 let clickFifteen = false;
-let clickEight = false;
+let clickEight = true;
 
 function randomIndex(){
     index = Math.floor(Math.random() *characters.length)

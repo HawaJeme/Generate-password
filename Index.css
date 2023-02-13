@@ -74,7 +74,8 @@ button{
     color: rgb(0, 0, 0);
     background-color: #273549;
     border-color: transparent;
-    border-radius: 20px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 .btn {
