@@ -8,6 +8,7 @@ body{
     flex-direction: column;
     justify-content: center;
     margin:0 auto ;
+    height: 100vh;
 }
 .intro{
     padding-bottom: 30px;
