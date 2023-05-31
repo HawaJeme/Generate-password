@@ -4,11 +4,10 @@ body{
 }
 
 .container{
-    position:absolute;
-    left: 5%;
-    align-items: center;
-    padding-left: 25px;
-    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:0 auto ;
 }
 .intro{
     padding-bottom: 30px;
