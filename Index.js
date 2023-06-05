@@ -45,9 +45,20 @@ function generatorEight(){
 function password(){
     let genFifteen = generatorFifteen()
     let genEight = generatorEight()
-if(clickFifteen){
-    return field.textContent = genFifteen
-} else if(clickEight){
-    return field.textContent = genEight
+    if(clickFifteen){
+        return field.textContent = genFifteen
+    } else if(clickEight){
+        return field.textContent = genEight
+    }
 }
-}
+
+field.addEventListener("click", (e)=> {
+    const text = e.target.textContent
+    if(text !== '# PASSWORD'){
+        navigator.clipboard.writeText(text).then(function() {
+            alert('Copied to clipboard successfully');
+        }, function(err) {
+            console.error('Could not copy text: ', err);
+        });
+    }
+})
