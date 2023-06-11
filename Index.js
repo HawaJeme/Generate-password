@@ -1,64 +1,66 @@
 const characters =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
 "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
-"0", "1", "2", "3", "4", "5", "6","7", "8", "9",
-"`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"];
+"0", "1", "2", "3", "4", "5", "6","7", "8", "9"]
+
+const symbols = ["`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"];
 
 const field = document.querySelector(".field");
-let clickFifteen = false;
-let clickEight = true;
+const container = document.querySelector(".container")
+const passLengthInput = document.getElementById("passLengthInput")
+const passLengthVal = document.getElementById("passLengthVal")
+const checkBox = document.getElementById("checkbox")
+const generator = document.getElementById("generator")
+
+let passwordLength = passLengthInput.value
+passLengthVal.textContent = passwordLength
+
+// Event listeners
+
+generator.addEventListener("click", password)
+
+passLengthInput.addEventListener("input", (e)=> {
+    passLengthVal.textContent = e.target.value
+    passwordLength = e.target.value
+})
+
+field.addEventListener("click", (e)=> {
+    copyToClipboard(e)
+})
+
+// Functions
 
 function randomIndex(){
-    index = Math.floor(Math.random() *characters.length)
-    return characters[index]
-}
-
-function onclick15(){
-    clickFifteen = true;
-    clickEight = false;
-    return generatorEight()
-}
-
-function generatorFifteen(){
-    let password = ""
-    for(let i=0; i<15; i++){
-        pass = randomIndex()
-        password += pass
+    let index = ''
+    let charsSymbols = [...characters, ...symbols]
+    if(checkBox.checked){
+        index = Math.floor(Math.random() * charsSymbols.length)
+        return charsSymbols[index]
+    } else {
+        index = Math.floor(Math.random() * characters.length)
+        return characters[index]
     }
-    return password
-}
-
-function onclick8(){
-    clickEight = true;
-    clickFifteen = false;
-    return generatorEight()
-}
-
-function generatorEight(){
-    let password = ""
-    for(let i=0; i<8; i++){
-        pass = randomIndex()
-        password += pass
-    }
-    return password
 }
 
 function password(){
-    let genFifteen = generatorFifteen()
-    let genEight = generatorEight()
-    if(clickFifteen){
-        return field.textContent = genFifteen
-    } else if(clickEight){
-        return field.textContent = genEight
+    let password = ""
+    for(let i=0; i<passwordLength; i++){
+        pass = randomIndex()
+        password += pass
     }
+    return field.textContent = password
 }
 
-field.addEventListener("click", (e)=> {
+function copyToClipboard(e){
     const text = e.target.textContent
     if(text !== '# PASSWORD'){
-        navigator.clipboard.writeText(text).then(function() {
-            alert('Copied to clipboard successfully');
-        }, function(err) {
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            container.innerHTML += `<p id="copied">${text} copied to clipboard</p>`
+            setTimeout(()=>{
+                document.getElementById("copied").remove()
+            }, 3000)
+        }, (err) => {
             console.error('Could not copy text: ', err);
         });
     }
-})
+}
