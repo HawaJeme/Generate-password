@@ -3,16 +3,16 @@
 }
 
 html, body{
-    height: 100%;
-    width: 100%;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
 }
 
 body{
     background-color: #1F2937;
     background-image: linear-gradient(rgb(0, 0, 0) ,#202020, #09864c);
-    display: flex;
-    align-items: center;
-    justify-content: center; 
     font-family: 'Karla', sans-serif;
 }
 
@@ -20,7 +20,9 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin:0 auto ;
+    padding: 0 20px;
+    height: -webkit-fill-available;
+    margin: 0 auto;
 }
 
 .intro{
@@ -31,12 +33,14 @@ body{
 .line-one{
     color:rgb(255, 255, 255);
     margin-bottom: 0;
+    font-size: 35px;
 }
 
 .line-two{
     margin-top: 0;
     color: #0be07d;
     margin-bottom: 0;
+    font-size: 32px;
 }
 
 .line-one ,.line-two {
@@ -68,7 +72,6 @@ p{
     margin-top: 100px;
     color: rgb(255, 255, 255);
     height: 42px;
-    /* background-color: #181d1a77; */
     box-shadow: 0.1px 1px 7px rgba(85, 249, 145, 0.75);
     border: none;
     border-radius: 6px;
@@ -93,7 +96,6 @@ button:active {
     font-size: 12px;
     box-shadow: 0.1px 1px 7px rgb(85, 249, 145, 0.5);
     text-shadow: 1px 0.4px black;
-    padding: 2px 6px 2px 6px;
 }
 
 .btns-container{
@@ -104,4 +106,16 @@ button:active {
 
 #copied{
     text-align: center;
+}
+
+@media (min-width: 474px){
+    .header{
+        max-width: 460px;
+    }
+}
+
+@media (min-width: 668px){
+    .header{
+        max-width: 464px;
+    }
 }
